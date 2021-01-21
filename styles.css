@@ -40,7 +40,7 @@ body
 	width: 65%;
 	display: inline-block;
 	text-align: left;
-	padding-bottom: 30%;
+	padding-bottom: 25%;
 }
 
 #pic
@@ -48,8 +48,29 @@ body
 	margin-top: 2%;
 }
 
+#search-bar
+{
+	border: 2px solid black;
+	border-radius: 4px;
+	padding: 0.5%;
+	outline:none;
+	margin-bottom: 1%;
+	transition: all .2s linear;
+}
+
+#search-bar:hover
+{
+	margin-left: 0.3%;
+	transform: scale(1.05);
+}
+
+#search-bar:focus
+{
+	border-color:#4d90fe;
+}
+
 @media screen and (max-width: 500px) {
 	#title-text { font-size: 200%; }
-	#main {margin-top: 4%; padding-bottom: 60%;}
+	#main {margin-top: 4%; padding-bottom: 60%; width: 85%; padding-left: 2%; padding-right: 2%;}
 	#pic { margin-top: 4%; }
 }
