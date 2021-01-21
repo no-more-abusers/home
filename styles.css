@@ -86,6 +86,14 @@ body
 	color: blue;
 }
 
+.fuzzy_suggestion
+{
+	cursor: pointer;
+	text-decoration: underline;
+	font-style: italic;
+	color: blue;
+}
+
 @media screen and (max-width: 500px) {
 	#title-text { font-size: 200%; }
 	#main {margin-top: 4%; padding-bottom: 60%; width: 85%; padding-left: 2%; padding-right: 2%;}
