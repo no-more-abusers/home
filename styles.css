@@ -69,6 +69,13 @@ body
 	border-color:#4d90fe;
 }
 
+iframe
+{
+	width: 85%;
+	border-radius: 10px;
+	box-shadow: 5px 5px black;
+}
+
 @media screen and (max-width: 500px) {
 	#title-text { font-size: 200%; }
 	#main {margin-top: 4%; padding-bottom: 60%; width: 85%; padding-left: 2%; padding-right: 2%;}
