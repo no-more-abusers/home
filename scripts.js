@@ -39,9 +39,14 @@ function main()
 	let help_btn = document.getElementById("help-us-out");
 	help_btn.onclick = function()
 	{
-		let box = document.getElementById("main");
-		box.style.paddingBottom = "5%";
-		box.innerHTML = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfJXPiwAfBXKwsNMtoyvRSWAsp0oiMI7yn7JPGh_r8AErbR9Q/viewform?embedded=true" width="640" height="570" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>'
+		if(window.screen.width < 955)
+			window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSfJXPiwAfBXKwsNMtoyvRSWAsp0oiMI7yn7JPGh_r8AErbR9Q/viewform";
+		else
+		{
+			let box = document.getElementById("main");
+			box.style.paddingBottom = "5%";
+			box.innerHTML = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfJXPiwAfBXKwsNMtoyvRSWAsp0oiMI7yn7JPGh_r8AErbR9Q/viewform?embedded=true" width="640" height="570" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>';
+		}
 	}
 }
 
