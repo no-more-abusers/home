@@ -39,9 +39,17 @@ function search(target)
 		h3.style.color = "red";
 
 		let p = document.createElement("p");
-		p.textContent = table[target];
+		p.innerHTML = "<a href = \"" + table[target] + "\">" + table[target] + "</a>";
+
+		let frame = document.createElement("iframe");
+		frame.src = table[target];
+		frame.height = "350px";
+
+		box.style.paddingBottom = "10%";
+
 		box.appendChild(h3);
 		box.appendChild(p);
+		box.appendChild(frame);
 	}
 	else
 	{
