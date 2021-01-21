@@ -6,8 +6,6 @@ let table =
 	"xxxtentacion": ["https://www.bbc.com/news/entertainment-arts-45971796",
 		"https://pitchfork.com/news/xxxtentacion-confessed-to-domestic-abuse-secret-recording-listen/"],
 
-	"sixnine": ["https://pitchfork.com/news/tekashi-6ix9ine-sued-for-2015-sexual-assault-of-a-minor/",
-		"https://www.bbc.com/news/newsbeat-45146400"],
 	"tekashi69": ["https://pitchfork.com/news/tekashi-6ix9ine-sued-for-2015-sexual-assault-of-a-minor/",
 		"https://www.bbc.com/news/newsbeat-45146400"],
 	"6ixn9ne": ["https://pitchfork.com/news/tekashi-6ix9ine-sued-for-2015-sexual-assault-of-a-minor/",
@@ -47,6 +45,30 @@ function main()
 	}
 }
 
+function hammingDistance(target, actual)
+{
+	let max = (target.length > actual.length) ? target.length : actual.length;
+	let min = (target.length > actual.length) ? actual.length : target.length;
+	let distance = max - min;
+
+	for(let i = 0; i < target.length; ++i)
+		if(target[i] != actual[i])
+			distance++;
+
+	return distance;
+}
+
+function fuzzySearch(target)
+{
+	const THRESHOLD = 5;
+	for(let key in table)
+	{
+		if(hammingDistance(target, key) <= THRESHOLD)
+			return [true, key];
+	}
+	return [false, ""];
+}
+
 function search(target)
 {
 	target = target.toLowerCase();
@@ -56,7 +78,18 @@ function search(target)
 	box.innerHTML = "<h2>Is <i><span style=\"color:" + targetFontColor + "\">" + target + "</span></i> an abuser?</h2><hr>";
 	let h3 = document.createElement("h3");
 
-	if(target in table)
+	let targetFound = target in table;
+
+	let fuzzyTargetFound, fuzzyTargetCorrection;
+	if(!targetFound)
+	{
+		[fuzzyTargetFound, fuzzyTargetCorrection] = fuzzySearch(target);
+		console.log("Target not found: " + target);
+		console.log("Fuzzy target found? " + fuzzyTargetFound + ", " + fuzzyTargetCorrection);
+	}
+
+
+	if(targetFound)
 	{
 		box.style.paddingBottom = "10%";
 
@@ -78,6 +111,16 @@ function search(target)
 
 			box.appendChild(p);
 			box.appendChild(frame);
+		}
+	}
+	else if(fuzzyTargetFound)
+	{
+		h3.innerHTML = "DID YOU MEAN:  <i><span class=\"fuzzy_suggestion\">" + fuzzyTargetCorrection + "</span></i>?";
+		box.appendChild(h3);
+		h3.onclick = function()
+		{
+			search(fuzzyTargetCorrection);
+			return;
 		}
 	}
 	else
