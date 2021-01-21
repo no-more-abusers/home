@@ -28,9 +28,10 @@ function main()
 function search(target)
 {
 	target = target.toLowerCase();
+	let targetFontColor = "#65334D";
 
 	let box = document.getElementById("main");
-	box.innerHTML = "<h2>Is <i><span style=\"color:blue\">" + target + "</span></i> an abuser?</h2><hr>";
+	box.innerHTML = "<h2>Is <i><span style=\"color:" + targetFontColor + "\">" + target + "</span></i> an abuser?</h2><hr>";
 	let h3 = document.createElement("h3");
 
 	if(target in table)
@@ -57,7 +58,7 @@ function search(target)
 		h3.style.color = "green";
 
 		let p = document.createElement("p");
-		p.innerHTML = "Well, maybe. This just means that there are no known allegations against <i><span style=\"color:blue\">" + target + "</span></i> as of now.";
+		p.innerHTML = "Well, maybe. This just means that there are no known allegations against <i><span style=\"color:" + targetFontColor + "\">" + target + "</span></i> as of now.";
 		box.appendChild(h3);
 		box.appendChild(p);
 	}
