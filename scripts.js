@@ -1,6 +1,20 @@
 let table =
 { 
-     "snoop dog":["https://www.billboard.com/articles/news/64310/snoop-dogg-disney-sued-over-alleged-rape"]
+	"snoop dog": ["https://www.billboard.com/articles/news/64310/snoop-dogg-disney-sued-over-alleged-rape",
+		"https://www.cbsnews.com/news/snoop-dogg-hit-with-25m-rape-suit/"],
+
+	"xxxtentacion": ["https://www.bbc.com/news/entertainment-arts-45971796",
+		"https://pitchfork.com/news/xxxtentacion-confessed-to-domestic-abuse-secret-recording-listen/"],
+
+	"sixnine": ["https://pitchfork.com/news/tekashi-6ix9ine-sued-for-2015-sexual-assault-of-a-minor/",
+		"https://www.bbc.com/news/newsbeat-45146400"],
+	"tekashi69": ["https://pitchfork.com/news/tekashi-6ix9ine-sued-for-2015-sexual-assault-of-a-minor/",
+		"https://www.bbc.com/news/newsbeat-45146400"],
+	"6ixn9ne": ["https://pitchfork.com/news/tekashi-6ix9ine-sued-for-2015-sexual-assault-of-a-minor/",
+		"https://www.bbc.com/news/newsbeat-45146400"],
+
+	"chris brown": ["https://www.npr.org/2019/01/22/687346330/chris-brown-arrested-on-charges-of-rape-in-paris",
+		"https://www.billboard.com/articles/news/269279/chris-brown-charged-with-assault-on-rihanna"]
 };
 
 function main()
@@ -23,6 +37,14 @@ function main()
 		}
 		return true;
 	}
+
+	let help_btn = document.getElementById("help-us-out");
+	help_btn.onclick = function()
+	{
+		let box = document.getElementById("main");
+		box.style.paddingBottom = "5%";
+		box.innerHTML = '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfJXPiwAfBXKwsNMtoyvRSWAsp0oiMI7yn7JPGh_r8AErbR9Q/viewform?embedded=true" width="640" height="570" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>'
+	}
 }
 
 function search(target)
@@ -36,21 +58,27 @@ function search(target)
 
 	if(target in table)
 	{
-		h3.textContent = "YES.";
-		h3.style.color = "red";
-
-		let p = document.createElement("p");
-		p.innerHTML = "<a href = \"" + table[target] + "\">" + table[target] + "</a>";
-
-		let frame = document.createElement("iframe");
-		frame.src = table[target];
-		frame.height = "350px";
-
 		box.style.paddingBottom = "10%";
 
+		h3.textContent = "YES.";
+		h3.style.color = "red";
 		box.appendChild(h3);
-		box.appendChild(p);
-		box.appendChild(frame);
+
+		for(let i = 0; i < table[target].length; ++i)
+		{
+			let url = table[target][i];
+
+			let p = document.createElement("p");
+			p.innerHTML = "<a href = \"" + url + "\">" + url + "</a>";
+
+			let frame = document.createElement("iframe");
+			frame.src = url;
+			frame.height = "350px";
+			frame.className = "preview"
+
+			box.appendChild(p);
+			box.appendChild(frame);
+		}
 	}
 	else
 	{
