@@ -86,7 +86,7 @@ function search(target)
 		h3.style.color = "green";
 
 		let p = document.createElement("p");
-		p.innerHTML = "Well, maybe. This just means that there are no known allegations against <i><span style=\"color:" + targetFontColor + "\">" + target + "</span></i> as of now.";
+		p.innerHTML = "Well, maybe. This just means that there are no known allegations against <i><span style=\"color:" + targetFontColor + "\">" + target + "</span></i> as of now, or that we don't have them in our database.";
 		box.appendChild(h3);
 		box.appendChild(p);
 	}
