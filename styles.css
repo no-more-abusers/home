@@ -41,6 +41,7 @@ body
 	display: inline-block;
 	text-align: left;
 	padding-bottom: 25%;
+	overflow-wrap: break-word;
 }
 
 #pic
@@ -69,11 +70,20 @@ body
 	border-color:#4d90fe;
 }
 
-iframe
+.preview
 {
 	width: 95%;
 	border-radius: 10px;
 	box-shadow: 5px 5px black;
+}
+
+#help-us-out
+{
+	display: inline-block;
+	cursor: pointer;
+	text-decoration: underline;
+	font-style: italic;
+	color: blue;
 }
 
 @media screen and (max-width: 500px) {
