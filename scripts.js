@@ -12,7 +12,8 @@ let table =
 		"https://www.bbc.com/news/newsbeat-45146400"],
 
 	"chris brown": ["https://www.npr.org/2019/01/22/687346330/chris-brown-arrested-on-charges-of-rape-in-paris",
-		"https://www.billboard.com/articles/news/269279/chris-brown-charged-with-assault-on-rihanna"]
+		"https://www.billboard.com/articles/news/269279/chris-brown-charged-with-assault-on-rihanna"],
+	"roman polanski": ["https://www.vox.com/culture/2017/8/17/16156902/roman-polanski-child-rape-charges-explained-samantha-geimer-robin-m", "https://apnews.com/article/e087fdee79e74caf99caa27edd8a8887", "https://www.hollywoodreporter.com/news/roman-polanski-rape-victim-unveils-591015", "https://www.rollingstone.com/culture/culture-news/roman-polanskis-alleged-sexual-assaults-what-you-need-to-know-117579/"]
 };
 
 function main()
