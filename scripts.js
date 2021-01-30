@@ -100,7 +100,7 @@ function search(target)
 	{
 		box.style.paddingBottom = "10%";
 
-		h3.textContent = "YES.";
+		h3.textContent = "This person has been accused of sexual misconduct. Read more about it here:";
 		h3.style.color = "red";
 		box.appendChild(h3);
 
