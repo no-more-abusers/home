@@ -1,6 +1,6 @@
 let table =
 { 
-	"snoop dog": ["https://www.billboard.com/articles/news/64310/snoop-dogg-disney-sued-over-alleged-rape",
+	"snoop dogg": ["https://www.billboard.com/articles/news/64310/snoop-dogg-disney-sued-over-alleged-rape",
 		"https://www.cbsnews.com/news/snoop-dogg-hit-with-25m-rape-suit/"],
 
 	"xxxtentacion": ["https://www.bbc.com/news/entertainment-arts-45971796",
